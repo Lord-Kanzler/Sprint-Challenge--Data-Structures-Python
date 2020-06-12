@@ -1,5 +1,5 @@
 import time
-
+from binary_search_tree import BSTNode
 start_time = time.time()
 
 f = open('names_1.txt', 'r')
@@ -12,11 +12,35 @@ f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
+name_dict = {}
+
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+# runtime: 3.7494709491729736 seconds
+
+# best approach
+for name in names_1:
+	name_dict[name] = True
+
+for name in names_2:
+	if name in name_dict:
+	    duplicates.append(name)
+# runtime: 0.0034589767456054688 seconds
+
+
+# bst = BSTNode(names_1[0])
+# for name in names_1[1:]:
+#     bst.insert(name)
+# for name in names_2:
+#     if bst.contains(name):
+#         duplicates.append(name)
+# runtime: 0.06159806251525879 seconds
+
+## RUBRIC ITEM: The runtime of the original nested loop was O(n ^ c).
+#  It is therefore worse than O(nlogn) and better than O(c^n).
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
