@@ -21,6 +21,8 @@ name_dict = {}
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 # runtime: 3.7494709491729736 seconds
+## --> The runtime of the original nested loop was O(n ^ c). 
+# It is therefore worse than O(nlogn) and better than O(c ^ n).
 
 # best approach
 for name in names_1:
@@ -29,7 +31,7 @@ for name in names_1:
 for name in names_2:
     if name in name_dict:
         duplicates.append(name)
-# runtime: 0.0034589767456054688 seconds
+# runtime: 0.0034589767456054688 seconds  -->O(n) or O(1) (I think)
 
 
 # bst = BSTNode(names_1[0])
@@ -38,9 +40,9 @@ for name in names_2:
 # for name in names_2:
 #     if bst.contains(name):
 #         duplicates.append(name)
-# runtime: 0.06159806251525879 seconds
+# runtime: 0.06159806251525879 seconds --> O(n)
 
-# --> The runtime of the original nested loop was O(n ^ c). It is therefore worse than O(nlogn) and better than O(c^n).
+## based on https://wiki.python.org/moin/TimeComplexity
 
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
