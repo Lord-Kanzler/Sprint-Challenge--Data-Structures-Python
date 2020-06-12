@@ -124,23 +124,23 @@ class DoublyLinkedList:
 
         self.length -= 1
 
-	    # If the list only has one item
+        # If the list only has one item
         if self.head == self.tail:
-	        self.head = None
-	        self.tail = None
+            self.head = None
+            self.tail = None
 
         # We have at least 2 items, and the item we want to delete is the head
-        if node == self.head: 
+        if node == self.head:
             self.head = node.next
             self.head.prev = None
 
-	    # We have at least 2 items, and the item we want to delete is the tail
+        # We have at least 2 items, and the item we want to delete is the tail
         if node == self.tail:
             self.tail = node.prev
             self.tail.next = None
 
         else:
-	        node.delete()
+            node.delete()
 
     """Returns the highest value currently in the list"""
 
@@ -149,7 +149,7 @@ class DoublyLinkedList:
         this = self.head
 
         while this is not None:
-	        if this.value > val:
-	            val = this.value
-	        this = this.next
+            if this.value > val:
+                val = this.value
+            this = this.next
         return val

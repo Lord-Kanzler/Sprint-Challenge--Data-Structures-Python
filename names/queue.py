@@ -21,6 +21,7 @@ sys.path.append("../doubly_linked_list")
 # from singly_linked_list import LinkedList
 from doubly_linked_list import DoublyLinkedList
 
+
 class Queue:
     def __init__(self):
         self.size = 0
@@ -41,4 +42,3 @@ class Queue:
             return self.storage.remove_from_tail()
         else:
             return None
-        

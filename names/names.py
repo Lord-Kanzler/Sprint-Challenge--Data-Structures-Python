@@ -1,12 +1,13 @@
 import time
 from binary_search_tree import BSTNode
+
 start_time = time.time()
 
-f = open('names_1.txt', 'r')
+f = open("names_1.txt", "r")
 names_1 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
-f = open('names_2.txt', 'r')
+f = open("names_2.txt", "r")
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
@@ -23,11 +24,11 @@ name_dict = {}
 
 # best approach
 for name in names_1:
-	name_dict[name] = True
+    name_dict[name] = True
 
 for name in names_2:
-	if name in name_dict:
-	    duplicates.append(name)
+    if name in name_dict:
+        duplicates.append(name)
 # runtime: 0.0034589767456054688 seconds
 
 
@@ -39,12 +40,11 @@ for name in names_2:
 #         duplicates.append(name)
 # runtime: 0.06159806251525879 seconds
 
-## RUBRIC ITEM: The runtime of the original nested loop was O(n ^ c).
-#  It is therefore worse than O(nlogn) and better than O(c^n).
+## --> The runtime of the original nested loop was O(n ^ c). It is therefore worse than O(nlogn) and better than O(c^n).
 
 end_time = time.time()
-print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
-print (f"runtime: {end_time - start_time} seconds")
+print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print(f"runtime: {end_time - start_time} seconds")
 
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem

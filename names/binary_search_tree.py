@@ -14,9 +14,9 @@ import sys
 
 sys.path.append("../stack")
 from stack import Stack
+
 sys.path.append("../queue")
 from queue import Queue
-
 
 
 class BSTNode:
@@ -80,7 +80,6 @@ class BSTNode:
                 return False
         elif target == self.value:
             return True
-
 
     # Return the maximum value found in the tree
     def get_max(self):
