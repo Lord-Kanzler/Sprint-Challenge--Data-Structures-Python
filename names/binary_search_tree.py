@@ -1,7 +1,7 @@
 """
-Binary search trees are a data structure that enforce an ordering over 
-the data they store. That ordering in turn makes it a lot more efficient 
-at searching for a particular piece of data in the tree. 
+Binary search trees are a data structure that enforce an ordering over
+the data they store. That ordering in turn makes it a lot more efficient
+at searching for a particular piece of data in the tree.
 
 This part of the project comprises two days:
 1. Implement the methods `insert`, `contains`, `get_max`, and `for_each`
@@ -10,13 +10,13 @@ This part of the project comprises two days:
    on the BSTNode class.
 """
 
+from queue import Queue
+from stack import Stack
 import sys
 
 sys.path.append("../stack")
-from stack import Stack
 
 sys.path.append("../queue")
-from queue import Queue
 
 
 class BSTNode:
